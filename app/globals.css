@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  /* Brand cyan — use everywhere for accents (matches #11d7fa) */
+  --brand-cyan: #11d7fa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-dm-sans: var(--font-dm-sans);
+  --color-brand-cyan: var(--brand-cyan);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans);
+}
+
+
+/* Marquee animation */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track-rtl {
+  display: flex;
+  animation: marquee-rtl 60s linear infinite;
+  width: max-content;
+}
+
+.marquee-track-ltr {
+  display: flex;
+  animation: marquee-ltr 60s linear infinite;
+  width: max-content;
+}
+
+/* Header hamburger animation */
+.hamburger-line {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Menu overlay clip-path animation */
+.menu-overlay {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transition: clip-path 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.menu-overlay.open {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Footer social hover */
+.footer-social-link {
+  transition: width 0.4s ease-in-out;
+  width: 100%;
+}
+
+.footer-social-link:hover {
+  width: 150%;
+}
+
+/* Our works hover */
+.works-img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.works-item:hover .works-img {
+  transform: scale(1.1);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero: side-vignette gradients look like a “half screen” on narrow phones; simplify on mobile */
+.hero-section {
+  padding: 120px 0 60px;
+  background-color: #101010;
+  background-image:
+    linear-gradient(
+      rgba(16, 16, 16, 0.72) 0%,
+      rgba(15, 17, 20, 0.94) 100%
+    ),
+    url("https://cdn.prod.website-files.com/67cc6e960496c50a6f716e6f/67dd8b51428826ae00811c7d_Group%20(1).svg"),
+    linear-gradient(rgb(16, 16, 16), rgb(16, 16, 16));
+  background-position: 0 0, center top, 0 0;
+  background-repeat: repeat, no-repeat, repeat;
+  background-size: auto, cover, auto;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    background-image:
+      linear-gradient(
+        270deg,
+        rgb(16, 16, 16),
+        rgba(0, 0, 0, 0) 13%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(16, 16, 16),
+        rgba(0, 0, 0, 0) 5%
+      ),
+      linear-gradient(
+        rgba(16, 16, 16, 0.584) 65%,
+        rgb(15, 17, 20)
+      ),
+      url("https://cdn.prod.website-files.com/67cc6e960496c50a6f716e6f/67dd8b51428826ae00811c7d_Group%20(1).svg"),
+      linear-gradient(rgb(16, 16, 16), rgb(16, 16, 16));
+    background-position: 0 0, 0 0, 0 0, 50% center, 0 0;
+    background-repeat: repeat, repeat, repeat, no-repeat, repeat;
+    background-size: auto, auto, auto, cover, auto;
+  }
+}
+
+/* Menu panel: hide scrollbar but keep scrolling (overflow containers can still show bars in some browsers) */
+.menu-nav-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.menu-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar hidden */
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
