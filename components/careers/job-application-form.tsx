@@ -163,7 +163,7 @@ export default function JobApplicationForm({
           <span className="mt-2 text-sm font-semibold text-white">
             {resumeName || "Upload PDF, DOC, or DOCX"}
           </span>
-          <span className="mt-1 text-xs text-white/50">Maximum file size: 5 MB</span>
+          <span className="mt-1 text-xs text-white/50">Maximum file size: 4 MB</span>
           <input
             name="resume"
             type="file"

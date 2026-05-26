@@ -5,7 +5,7 @@ import { getCareerJob } from "@/lib/careers/jobs";
 
 export const runtime = "nodejs";
 
-const MAX_RESUME_BYTES = 5 * 1024 * 1024;
+const MAX_RESUME_BYTES = 4 * 1024 * 1024;
 const ALLOWED_RESUME_TYPES = new Set([
   "application/pdf",
   "application/msword",
@@ -69,6 +69,17 @@ async function sendResendEmail({
   }
 }
 
+async function sendResendEmailSafely(
+  payload: Parameters<typeof sendResendEmail>[0],
+  label: string
+) {
+  try {
+    await sendResendEmail(payload);
+  } catch (error) {
+    console.error(`Resend careers ${label} exception:`, error);
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -121,7 +132,7 @@ export async function POST(request: NextRequest) {
     }
     if (!(resume instanceof File) || !isAllowedResume(resume)) {
       return NextResponse.json(
-        { error: "Upload a PDF, DOC, or DOCX resume up to 5 MB." },
+        { error: "Upload a PDF, DOC, or DOCX resume up to 4 MB." },
         { status: 400 }
       );
     }
@@ -187,36 +198,42 @@ export async function POST(request: NextRequest) {
 
     const hrEmail = process.env.CAREERS_HR_EMAIL || process.env.CONTACT_TO_EMAIL;
     if (hrEmail) {
-      await sendResendEmail({
-        to: [hrEmail],
-        replyTo: email,
-        subject: `New career application - ${job.title} - ${fullName}`,
-        html: `
-          <p><strong>${fullName}</strong> applied for <strong>${job.title}</strong>.</p>
-          <ul>
-            <li>Email: ${email}</li>
-            <li>Phone: ${phone}</li>
-            <li>Experience: ${experience}</li>
-            <li>Portfolio: ${portfolioUrl || "Not provided"}</li>
-            <li>Resume: ${resume.name} (${Math.round(resume.size / 1024)} KB)</li>
-            <li>Application ID: ${result.insertedId.toString()}</li>
-          </ul>
-          <p>${coverNote}</p>
-        `,
-      });
+      await sendResendEmailSafely(
+        {
+          to: [hrEmail],
+          replyTo: email,
+          subject: `New career application - ${job.title} - ${fullName}`,
+          html: `
+            <p><strong>${fullName}</strong> applied for <strong>${job.title}</strong>.</p>
+            <ul>
+              <li>Email: ${email}</li>
+              <li>Phone: ${phone}</li>
+              <li>Experience: ${experience}</li>
+              <li>Portfolio: ${portfolioUrl || "Not provided"}</li>
+              <li>Resume: ${resume.name} (${Math.round(resume.size / 1024)} KB)</li>
+              <li>Application ID: ${result.insertedId.toString()}</li>
+            </ul>
+            <p>${coverNote}</p>
+          `,
+        },
+        "HR notification"
+      );
     }
 
-    await sendResendEmail({
-      to: [email],
-      subject: `Application received - ${job.title} at Arthzone Technologies`,
-      html: `
-        <p>Hi ${fullName.split(" ")[0] || fullName},</p>
-        <p>Thanks for applying for <strong>${job.title}</strong> at Arthzone Technologies. We have received your application and resume.</p>
-        <p>Our hiring team will review your profile and contact you if your experience matches the role.</p>
-        <p>Application ID: ${result.insertedId.toString()}</p>
-        <p>- Arthzone Hiring Team</p>
-      `,
-    });
+    await sendResendEmailSafely(
+      {
+        to: [email],
+        subject: `Application received - ${job.title} at Arthzone Technologies`,
+        html: `
+          <p>Hi ${fullName.split(" ")[0] || fullName},</p>
+          <p>Thanks for applying for <strong>${job.title}</strong> at Arthzone Technologies. We have received your application and resume.</p>
+          <p>Our hiring team will review your profile and contact you if your experience matches the role.</p>
+          <p>Application ID: ${result.insertedId.toString()}</p>
+          <p>- Arthzone Hiring Team</p>
+        `,
+      },
+      "applicant confirmation"
+    );
 
     return NextResponse.json({
       success: true,
@@ -224,10 +241,25 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error("Career application error:", error);
-    const message =
-      error instanceof Error && error.message.includes("MONGODB_URI")
-        ? "Careers database is not configured. Set MONGODB_URI in .env.local."
-        : "Something went wrong. Please try again.";
+    let message = "Something went wrong. Please try again.";
+    if (error instanceof Error) {
+      if (error.message.includes("MONGODB_URI")) {
+        message = "Careers database is not configured on the server.";
+      } else if (error.name === "MongoParseError") {
+        message = "Careers database URI is invalid on the server.";
+      } else if (
+        error.name === "MongoServerSelectionError" ||
+        error.message.includes("querySrv") ||
+        error.message.includes("ENOTFOUND")
+      ) {
+        message = "Careers database is unreachable from the server.";
+      } else if (
+        error.name === "MongoServerError" &&
+        /auth|authentication|bad auth/i.test(error.message)
+      ) {
+        message = "Careers database authentication failed on the server.";
+      }
+    }
 
     return NextResponse.json({ error: message }, { status: 500 });
   }
