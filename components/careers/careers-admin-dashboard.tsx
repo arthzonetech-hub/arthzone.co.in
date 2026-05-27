@@ -395,7 +395,6 @@ export default function CareersAdminDashboard() {
               value={loginToken}
               onChange={(event) => setLoginToken(event.target.value)}
               className="mt-2 h-12 w-full rounded-lg border border-black/15 bg-white px-4 text-base outline-none transition focus:border-[#11d7fa] focus:ring-4 focus:ring-[#11d7fa]/15"
-              placeholder="arthzonetechnologiesindore"
             />
             {error ? <p className="mt-4 text-sm font-bold text-red-600">{error}</p> : null}
             <button
