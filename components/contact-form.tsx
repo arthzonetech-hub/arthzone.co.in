@@ -125,7 +125,7 @@ export default function ContactForm() {
                   opacity: 0.7,
                 }}
               >
-                Katju Nagar, Ratlam, Madhya Pradesh 457001
+                Indore, Madhya Pradesh 452001
               </p>
               <p
                 style={{
@@ -178,7 +178,7 @@ export default function ContactForm() {
                   opacity: 0.7,
                 }}
               >
-                Mandsaur Road, Pratapgarh, Rajsthan 312605
+                Indore, Madhya Pradesh 452001
               </p>
               <p
                 style={{

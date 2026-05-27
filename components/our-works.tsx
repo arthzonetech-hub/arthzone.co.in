@@ -64,7 +64,7 @@ const works: WorkItem[] = [
 
 export default function OurWorks() {
   return (
-    <section className="py-15 text-white bg-[#101010]">
+    <section id="work" className="py-15 text-white bg-[#101010]">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight capitalize mb-4">

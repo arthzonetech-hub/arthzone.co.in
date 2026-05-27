@@ -264,7 +264,7 @@ export default function BecomeAPartnerPage() {
             ))}
           </div>
           <p className="mt-10 text-center text-sm text-gray-500">
-            Serving businesses in Ratlam, Mandsaur, Neemuch, Pratapgarh, and clients across India
+            Serving businesses in Indore and clients across India
             — partnerships work the same whether your clients are local or remote.
           </p>
         </div>

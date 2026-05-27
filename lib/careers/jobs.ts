@@ -34,7 +34,7 @@ export const careerJobs: CareerJob[] = [
     department: "Engineering",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam / Remote IST",
+    location: "Indore / Remote IST",
     experience: "0-1 year",
     salary: "₹2.4L - ₹4.2L CTC",
     summary:
@@ -71,7 +71,7 @@ export const careerJobs: CareerJob[] = [
     department: "Engineering",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam / Remote IST",
+    location: "Indore / Remote IST",
     experience: "2+ years",
     salary: "₹5L - ₹10L CTC",
     summary:
@@ -144,7 +144,7 @@ export const careerJobs: CareerJob[] = [
     department: "Engineering",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam / Remote IST",
+    location: "Indore / Remote IST",
     experience: "2-4 years",
     salary: "₹5L - ₹11L CTC",
     summary:
@@ -253,7 +253,7 @@ export const careerJobs: CareerJob[] = [
     department: "Quality",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam / Remote IST",
+    location: "Indore / Remote IST",
     experience: "1-3 years",
     salary: "₹3.6L - ₹7.5L CTC",
     summary:
@@ -289,7 +289,7 @@ export const careerJobs: CareerJob[] = [
     department: "Design",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam / Remote IST",
+    location: "Indore / Remote IST",
     experience: "1-4 years",
     salary: "₹3.6L - ₹8L CTC",
     summary:
@@ -398,7 +398,7 @@ export const careerJobs: CareerJob[] = [
     department: "Growth",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam / Remote IST",
+    location: "Indore / Remote IST",
     experience: "1-4 years",
     salary: "₹3L - ₹7L CTC",
     summary:
@@ -434,7 +434,7 @@ export const careerJobs: CareerJob[] = [
     department: "Delivery",
     type: "Full-time",
     mode: "Hybrid",
-    location: "Ratlam",
+    location: "Indore",
     experience: "1-3 years",
     salary: "₹3L - ₹6.5L CTC",
     summary:

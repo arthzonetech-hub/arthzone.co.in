@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { arthzoneSocial } from "@/lib/social-links";
 
 export default function Footer() {
@@ -63,13 +64,13 @@ export default function Footer() {
         <div className="bg-[#181A1B] text-white pt-8 md:pt-12 px-5 sm:px-8 md:px-12 pb-5 md:pb-7 rounded-t-[20px] md:rounded-t-[30px]">
           {/* Logo */}
           <div>
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <img
                 src="/assets/images/footer-logo.png"
                 alt="Arthzone Tech Logo"
                 className="w-14 h-auto md:w-40 md:h-auto"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Grid */}
@@ -142,9 +143,9 @@ export default function Footer() {
                     </div>
                     <p className="text-white font-medium text-sm">
                       I agree with the{" "}
-                      <a href="#" className="text-[#11d7fa] underline">
+                      <Link href="/privacy-policy" className="text-[#11d7fa] underline">
                         privacy policy
-                      </a>
+                      </Link>
                       .
                     </p>
                   </label>
@@ -158,7 +159,7 @@ export default function Footer() {
                 </form>
               ) : (
                 <div className="p-5 bg-[#11d7fa] text-white rounded-xl text-base leading-relaxed font-medium">
-                  🎉 Thank you for subscribing to our newsletter! You're now
+                  Thank you for subscribing to our newsletter! You&apos;re now
                   part of our community and will be the first to hear about our
                   latest updates, tips, and special offers.
                 </div>
@@ -175,7 +176,7 @@ export default function Footer() {
                   <ul className="flex flex-col">
                     {[
                       {
-                        label: "Web Application Development",
+                        label: "AI-Powered Web Apps",
                         href: "/services/web-application",
                       },
                       {
@@ -190,15 +191,18 @@ export default function Footer() {
                         label: "App Development",
                         href: "/services/app-development",
                       },
-                      { label: "Marketing Packages", href: "#" },
+                      {
+                        label: "Business Websites",
+                        href: "/website-development-indore",
+                      },
                     ].map((item) => (
                       <li key={item.label}>
-                        <a
+                        <Link
                           href={item.href}
                           className="inline-block py-1.5 md:py-2.5 text-white text-base md:text-lg font-medium hover:text-[#11d7fa] transition-colors"
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -209,19 +213,19 @@ export default function Footer() {
                   </h3>
                   <ul className="flex flex-col">
                     {[
-                      "About Us",
-                      "Our Works",
-                      "Career",
-                      "Client Reviews",
-                      "Contact Us",
+                      { label: "About Us", href: "/company/about-us" },
+                      { label: "Our Works", href: "/#work" },
+                      { label: "Careers", href: "/career" },
+                      { label: "Client Reviews", href: "/resources/client-reviews" },
+                      { label: "Contact Us", href: "/contact" },
                     ].map((item) => (
-                      <li key={item}>
-                        <a
-                          href="#"
+                      <li key={item.label}>
+                        <Link
+                          href={item.href}
                           className="inline-block py-1.5 md:py-2.5 text-white text-base md:text-lg font-medium hover:text-[#11d7fa] transition-colors"
                         >
-                          {item}
-                        </a>
+                          {item.label}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -232,19 +236,19 @@ export default function Footer() {
                   </h3>
                   <ul className="flex flex-col">
                     {[
-                      "Our Team",
-                      "Industry Serve",
-                      "Our Blogs",
-                      "The Arthzone Vibe",
-                      "Certified Partners",
+                      { label: "Our Team", href: "/company/our-team" },
+                      { label: "Industries", href: "/company/industry-services" },
+                      { label: "Our Blogs", href: "/resources/our-blogs" },
+                      { label: "The Arthzone Vibe", href: "/resources/the-arthzone-vibe" },
+                      { label: "Certified Partners", href: "/company/certified-partners" },
                     ].map((item) => (
-                      <li key={item}>
-                        <a
-                          href="#"
+                      <li key={item.label}>
+                        <Link
+                          href={item.href}
                           className="inline-block py-1.5 md:py-2.5 text-white text-base md:text-lg font-medium hover:text-[#11d7fa] transition-colors"
                         >
-                          {item}
-                        </a>
+                          {item.label}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -272,8 +276,8 @@ export default function Footer() {
             <div>
               <ul className="flex flex-wrap items-center gap-3 md:gap-7">
                 <li>
-                  <a
-                    href="#"
+                  <button
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault();
                       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -293,31 +297,31 @@ export default function Footer() {
                         fill="currentColor"
                       />
                     </svg>
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/#faq"
                     className="text-sm md:text-lg font-normal text-white hover:text-[#11d7fa] transition-colors"
                   >
-                    FAQ's
-                  </a>
+                    FAQs
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/terms-and-conditions"
                     className="text-sm md:text-lg font-normal text-white hover:text-[#11d7fa] transition-colors"
                   >
-                    Terms & Condition
-                  </a>
+                    Terms & Conditions
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/privacy-policy"
                     className="text-sm md:text-lg font-normal text-white hover:text-[#11d7fa] transition-colors"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

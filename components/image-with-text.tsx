@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 export default function ImageWithText() {
   return (
@@ -24,12 +25,12 @@ export default function ImageWithText() {
               commitment to quality and a promise of dedicated, long-term
               partnership.
             </p>
-            <a
-              href="#"
+            <Link
+              href="/#work"
               className="inline-flex items-center gap-2.5 px-6 h-[52px] md:h-[60px] bg-[#7614EF] border-2 border-[#7614EF] text-white rounded-xl text-base md:text-xl font-semibold transition-all duration-300 hover:bg-white hover:text-[#7614EF]"
             >
               Explore Our Works
-            </a>
+            </Link>
           </div>
         </div>
       </div>

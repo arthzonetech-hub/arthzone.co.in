@@ -149,7 +149,7 @@ export const DIGITAL_MARKETING_PAGES: Record<string, DigitalMarketingServiceCont
       {
         q: "Do you offer local SEO for businesses targeting a specific area?",
         a:
-          "Yes. We optimize for local search, maps, and location-specific queries—ideal for shops, clinics, and service businesses in cities like Ratlam, Indore, and beyond.",
+          "Yes. We optimize for local search, maps, and location-specific queries—ideal for shops, clinics, and service businesses in Indore and beyond.",
       },
     ],
   },

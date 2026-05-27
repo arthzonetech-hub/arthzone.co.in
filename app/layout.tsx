@@ -17,15 +17,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Arthzone | AI-Powered IT Solutions & Website Development in Ratlam",
+  title: "Arthzone | AI-Powered IT Solutions & Website Development in Indore",
   
   description:
-    "Arthzone helps businesses in Ratlam grow with modern websites, POS software, and AI-driven IT solutions. Get high-converting websites, business automation, and digital growth services.",
+    "Arthzone helps businesses in Indore grow with modern websites, POS software, and AI-driven IT solutions. Get high-converting websites, business automation, and digital growth services.",
   
   keywords: [
-    "Website development in Ratlam",
+    "Website development in Indore",
     "POS software for shops",
-    "IT company in Ratlam",
+    "IT company in Indore",
     "Business website services",
     "AI software development",
     "Restaurant billing software",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Arthzone | Grow Your Business with Smart IT Solutions",
     description:
-      "We build powerful websites, POS systems, and AI solutions to help businesses scale faster. Trusted by growing businesses in Ratlam.",
+      "We build powerful websites, POS systems, and AI solutions to help businesses scale faster. Trusted by growing businesses in Indore.",
     url: "https://arthzone.co.in",
     siteName: "Arthzone",
     images: [

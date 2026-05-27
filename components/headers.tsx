@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import {
   CalendarIcon,
   PhoneIcon,
@@ -31,7 +32,7 @@ const navItems: NavItem[] = [
     links: [
       { label: "About Us", href: "/company/about-us" },
       { label: "Our Team", href: "/company/our-team" },
-      { label: "Industry Serve", href: "/company/industry-services" },
+      { label: "Industries", href: "/company/industry-services" },
       { label: "Certified Partners", href: "/company/certified-partners" },
     ],
   },
@@ -84,7 +85,6 @@ export default function Header() {
 
   useEffect(() => {
     if (!menuOpen) {
-      setMenuScrolled(false);
       if (navScrollRef.current) {
         navScrollRef.current.scrollTop = 0;
       }
@@ -126,20 +126,26 @@ export default function Header() {
 
       {/* Logo + menu: one row; absolute so it scrolls with the page (not fixed/sticky) */}
       <header className="absolute top-0 left-0 right-0 z-[999999] flex w-full flex-nowrap items-center justify-between gap-3 pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pt-[max(0.75rem,env(safe-area-inset-top,0px))] pb-3 md:pb-4 md:pt-5 pointer-events-none">
-        <a
+        <Link
           href="/"
           className="pointer-events-auto flex min-w-0 shrink items-center"
-          onClick={() => setMenuOpen(false)}
+          onClick={() => {
+            setMenuOpen(false);
+            setMenuScrolled(false);
+          }}
         >
           <img
             src="/assets/images/logo.png"
             alt="Arthzone Tech Logo"
             className="h-auto w-36 min-[400px]:w-44 sm:w-48 md:w-52 lg:w-60 xl:w-64 object-contain object-left max-w-[min(16rem,calc(100vw-6.5rem))]"
           />
-        </a>
+        </Link>
         <button
           type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            if (menuOpen) setMenuScrolled(false);
+            setMenuOpen(!menuOpen);
+          }}
           className={`pointer-events-auto shrink-0 bg-white text-[#101010] rounded-xl min-h-[52px] min-w-[52px] md:min-h-[70px] md:min-w-[70px] flex items-center justify-center border-2 border-[#f5f6f9] transition-all duration-300 hover:shadow-lg`}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -257,7 +263,7 @@ export default function Header() {
                 </li>
                 <li>
                   <span className="text-sm lg:text-lg font-semibold text-white">
-                    Katju Nagar, Ratlam 457001, Madhya Pradesh, India
+                    Indore 452001, Madhya Pradesh, India
                   </span>
                 </li>
               </ul>
@@ -285,7 +291,7 @@ export default function Header() {
                 </li>
                 <li>
                   <span className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-white leading-tight">
-                    Mandsaur Road, Pratapgarh, Rajsthan 312605
+                    Indore 452001, Madhya Pradesh, India
                   </span>
                 </li>
               </ul>

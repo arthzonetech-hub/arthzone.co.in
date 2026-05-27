@@ -2,31 +2,31 @@ import Header from "@/components/headers";
 import Footer from "@/components/footer";
 
 export const metadata = {
-  title: "Website Development Company in Neemuch | Arthzone Technologies",
+  title: "Website Development Company in Indore | Arthzone Technologies",
   description:
-    "Arthzone Technologies builds affordable, modern websites for businesses in Neemuch. Custom web design, landing pages & maintenance. Get a free consultation today.",
+    "Arthzone Technologies builds affordable, modern websites for businesses in Indore. Custom web design, landing pages & maintenance. Get a free consultation today.",
 };
 
 const faqItems = [
   {
-    q: "How much does website development cost in Neemuch?",
-    a: "Our website packages for Neemuch businesses start from ₹4,999 for a basic business website. Custom projects are priced based on requirements. Contact us for a free quote.",
+    q: "Does Arthzone only build websites?",
+    a: "No. Arthzone builds complete digital and software solutions, including business websites, custom web applications, admin dashboards, customer portals, e-commerce systems, automation workflows, and AI-powered tools. A website can be the starting point, but our work often connects deeper into business operations.",
   },
   {
-    q: "How long does it take to build a website?",
-    a: "A standard business website is delivered in 5–7 working days. Custom or larger projects may take 2–4 weeks depending on complexity.",
+    q: "Can you add AI-powered features to my business system?",
+    a: "Yes. We can add AI-assisted features such as smart enquiry handling, automated replies, lead qualification, content assistance, data summaries, reporting, search, recommendations, and workflow automation when they make practical sense for your business.",
   },
   {
-    q: "Do you provide website maintenance in Neemuch?",
-    a: "Yes, we offer ongoing website maintenance and support plans to keep your site fast, secure, and up to date.",
+    q: "Can you build custom software for my business process?",
+    a: "Yes. We can understand your current process and build a custom solution around it, such as role-based dashboards, booking systems, CRM-style tools, payment workflows, document handling, internal reporting, notifications, and integrations with third-party services.",
   },
   {
-    q: "Can you build a website for a small business in Neemuch?",
-    a: "Absolutely. We specialize in building websites for small and local businesses in Neemuch — shops, restaurants, coaching institutes, clinics, and more.",
+    q: "How do you decide the cost and timeline?",
+    a: "We first understand your goals, users, required features, integrations, and launch priority. Then we share a clear scope, timeline, and pricing. Simple websites can move quickly, while custom software and AI-enabled systems are planned in phases for better quality and control.",
   },
   {
-    q: "What is the best website development company in Neemuch?",
-    a: "Arthzone Technologies is a trusted website development company based in Madhya Pradesh, known for delivering modern, fast, and affordable websites with personal support.",
+    q: "Why choose Arthzone Technologies?",
+    a: "Arthzone combines design, engineering, automation, AI thinking, SEO fundamentals, and business strategy. We do not just create screens; we build systems that help your business look credible, manage work better, generate enquiries, and scale with confidence.",
   },
 ];
 
@@ -58,7 +58,7 @@ const packages = [
   },
 ];
 
-export default function NeemuchPage() {
+export default function IndorePage() {
   return (
     <div className="relative bg-[#101010] text-white">
       <Header />
@@ -69,12 +69,12 @@ export default function NeemuchPage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "Arthzone Technologies and Soft. Solutions",
-            description: "Website development company in Neemuch.",
+            description: "Website development company in Indore.",
             url: "https://www.arthzonetech.com",
-            areaServed: "Neemuch",
+            areaServed: "Indore",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Neemuch",
+              addressLocality: "Indore",
               addressRegion: "Madhya Pradesh",
               addressCountry: "IN",
             },
@@ -105,10 +105,10 @@ export default function NeemuchPage() {
             Arthzone Technologies
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mt-4 mb-4">
-            Website Development Company in Neemuch
+            Website Development Company in Indore
           </h1>
           <p className="max-w-2xl mx-auto text-gray-300 text-lg">
-            We build modern, high-converting websites for businesses in Neemuch
+            We build modern, high-converting websites for businesses in Indore
             that attract customers and grow your business online.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
@@ -120,7 +120,7 @@ export default function NeemuchPage() {
             </a>
             <a
               href="/contact"
-              className="px-6 py-3 bg-[#11d7fa] rounded-xl font-semibold hover:bg-white hover:text-black transition"
+              className="px-6 py-3 bg-[#ff531a] rounded-xl font-semibold hover:bg-white hover:text-black transition"
             >
               Contact Us
             </a>
@@ -134,22 +134,22 @@ export default function NeemuchPage() {
         {/* INTRO */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Website Development Company in Neemuch
+            Website Development Company in Indore
           </h2>
           <p className="text-gray-400 leading-relaxed">
-            Arthzone Technologies is a trusted website development company serving businesses in Neemuch,
+            Arthzone Technologies is a trusted website development company serving businesses in Indore,
             Madhya Pradesh. We help local shops, startups, coaching institutes, clinics, and service
             businesses build a strong online presence with modern, fast, and mobile-friendly websites.
-            Whether you are looking for an affordable website in Neemuch or a fully custom web application,
-            our team delivers quality solutions on time and within budget. With clients across Neemuch and
-            Madhya Pradesh, we are the preferred web design partner for businesses that want to grow online.
+            Whether you are looking for an affordable website in Indore or a fully custom web application,
+            our team delivers quality solutions on time and within budget. With clients across Indore and
+            beyond, we are the go-to web design partner for businesses that want to grow online.
           </p>
         </div>
 
         {/* SERVICES */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Our Website Development Services in Neemuch
+            Our Website Development Services in Indore
           </h2>
           <ul className="grid sm:grid-cols-2 gap-4 text-gray-300">
             {[
@@ -192,7 +192,7 @@ export default function NeemuchPage() {
             Website Development Packages & Pricing
           </h2>
           <p className="text-gray-400 mb-6">
-            Affordable website development packages for businesses in Neemuch. No hidden charges.
+            Affordable website development packages for businesses in Indore. No hidden charges.
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             {packages.map((pkg) => (
@@ -233,22 +233,22 @@ export default function NeemuchPage() {
         {/* WHY WEBSITE */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Why Your Neemuch Business Needs a Website
+            Why Your Indore Business Needs a Website
           </h2>
           <ul className="space-y-2 text-gray-400">
             <li>• Reach more customers online — most people search Google before visiting a business</li>
             <li>• Build trust and credibility with a professional online presence</li>
             <li>• Showcase your products and services 24/7</li>
             <li>• Get leads and enquiries even when your shop is closed</li>
-            <li>• Stay ahead of competitors who don&apos;t have a website yet</li>
-            <li>• Rank on Google for searches like &quot;best [your business] in Neemuch&quot;</li>
+            <li>• Stay ahead of competitors who do not have a website yet</li>
+            <li>• Rank on Google for searches like &quot;best [your business] in Indore&quot;</li>
           </ul>
         </div>
 
         {/* INDUSTRIES */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Industries We Serve in Neemuch
+            Industries We Serve in Indore
           </h2>
           <ul className="grid sm:grid-cols-2 gap-3 text-gray-400">
             <li>• Restaurants & Cafes</li>
@@ -265,15 +265,15 @@ export default function NeemuchPage() {
         {/* WHY CHOOSE */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Why Choose Arthzone Technologies in Neemuch
+            Why Choose Arthzone Technologies in Indore
           </h2>
           <ul className="space-y-2 text-gray-400">
             <li>• Affordable pricing starting at ₹4,999</li>
             <li>• Fast delivery in 5–7 working days</li>
             <li>• Modern, professional design</li>
             <li>• 100% mobile-friendly and SEO-ready websites</li>
-            <li>• Personal support — we're always reachable</li>
-            <li>• Serving clients across Neemuch and Madhya Pradesh</li>
+            <li>• Personal support — we are always reachable</li>
+            <li>• Serving clients across Indore and Madhya Pradesh</li>
           </ul>
         </div>
 
@@ -285,18 +285,20 @@ export default function NeemuchPage() {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               {
-                name: "Deepak Rathore",
-                business: "Hardware Shop, Neemuch",
-                text: "Arthzone built our website quickly and professionally. We now get calls from customers who found us on Google. Great value for money.",
+                name: "Ramesh Patidar",
+                business: "Retail Shop, Indore",
+                text: "Arthzone built our website in just 6 days. We started getting customer enquiries within the first week. Very professional team.",
               },
               {
-                name: "Anjali Tiwari",
-                business: "Coaching Institute, Neemuch",
-                text: "The website looks amazing and loads super fast. Our student enquiries have increased since we launched. Very happy with the service.",
+                name: "Sunita Sharma",
+                business: "Coaching Institute, Indore",
+                text: "Our institute now gets online admissions through the website. The design is clean and works perfectly on mobile. Highly recommend.",
               },
             ].map((t, i) => (
               <div key={i} className="border border-gray-700 rounded-xl p-5">
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">"{t.text}"</p>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  &quot;{t.text}&quot;
+                </p>
                 <p className="text-white font-semibold text-sm">{t.name}</p>
                 <p className="text-gray-500 text-xs">{t.business}</p>
               </div>
@@ -308,7 +310,7 @@ export default function NeemuchPage() {
         <div className="bg-[#7614EF]/10 border border-[#7614EF] rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-2">Ready to get your website built?</h2>
           <p className="text-gray-400 mb-5">
-            Get a free consultation and quote for your Neemuch business today.
+            Get a free consultation and quote for your Indore business today.
           </p>
           <a
             href="https://app.cal.com/arthzone-tech"
@@ -339,4 +341,3 @@ export default function NeemuchPage() {
     </div>
   );
 }
-    

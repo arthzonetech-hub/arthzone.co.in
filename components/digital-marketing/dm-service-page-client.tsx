@@ -223,7 +223,7 @@ export default function DmServicePageClient({
         </div>
       </section>
 
-      <DmStickyFaq faqs={content.faqs} badge="FAQ's" />
+      <DmStickyFaq faqs={content.faqs} badge="FAQs" />
     </div>
   );
 }

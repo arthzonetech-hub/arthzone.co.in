@@ -3,32 +3,36 @@ import React, { useState } from "react";
 
 const faqs = [
   {
-    q: "How much does website development cost?",
-    a: "Our packages start from ₹4,999 for a basic business website. The final price depends on the number of pages, features, and customization required. We offer transparent, no-hidden-charge pricing — contact us for a free quote tailored to your business.",
+    q: "What kind of solutions does Arthzone build?",
+    a: "Arthzone builds AI-powered software solutions for modern businesses, including business websites, web applications, admin dashboards, customer portals, automation workflows, e-commerce systems, CRM-style tools, API integrations, and digital growth systems. We focus on technology that improves operations, saves time, and creates measurable business value.",
   },
   {
-    q: "How long does it take to build a website?",
-    a: "A standard business website is delivered in 5–7 working days. Custom projects, e-commerce platforms, or web applications may take 2–4 weeks. We always provide a clear timeline before starting work.",
+    q: "Do you only make websites?",
+    a: "No. Websites are one part of what we do. We also design and develop custom software, SaaS-style platforms, business automation systems, AI-assisted workflows, booking systems, lead management tools, internal dashboards, and integrations that connect different parts of a business.",
   },
   {
-    q: "Will my website work on mobile phones?",
-    a: "Absolutely. Every website we build is fully responsive and mobile-optimized. With over 70% of users browsing on mobile, this is non-negotiable for us — your site will look great on all screen sizes.",
+    q: "How do you use AI in business solutions?",
+    a: "We use AI where it genuinely improves the product or workflow, such as smart forms, content assistance, automated replies, data summaries, lead qualification, reporting, search, recommendations, and process automation. The goal is not to add AI as a buzzword, but to make work faster, clearer, and easier to manage.",
   },
   {
-    q: "Do you provide SEO with the website?",
-    a: "Yes. All our websites are built with on-page SEO best practices — fast loading speed, proper heading structure, meta tags, and clean code. We also offer ongoing SEO services to help you rank higher on Google.",
+    q: "Can you build custom software for my business process?",
+    a: "Yes. We can study your current workflow, identify repetitive tasks or gaps, and build a custom system around your operations. This can include role-based dashboards, data collection, approval flows, notifications, reports, payment workflows, document handling, and third-party integrations.",
   },
   {
-    q: "Can you redesign my existing website?",
-    a: "Yes, we specialize in website redesigns. Whether your site looks outdated, loads slowly, or isn't generating leads, we can rebuild it with a modern design while preserving your content and SEO rankings.",
+    q: "How do you plan and price a project?",
+    a: "We begin with a requirement discussion to understand your goals, users, workflows, features, timeline, and budget. After that, we share a clear scope, recommended technology approach, delivery phases, and transparent pricing. Simple websites can start small, while custom software and AI-enabled systems are quoted based on complexity.",
   },
   {
-    q: "What happens after my website is launched?",
-    a: "We offer ongoing maintenance and support plans to keep your site secure, updated, and running smoothly. You're never left on your own — our team is always reachable for updates, fixes, or new features.",
+    q: "Can you improve an existing website or software system?",
+    a: "Yes. We can audit existing websites, dashboards, apps, or workflows and improve performance, design, usability, security, SEO, integrations, and maintainability. If the existing system is limiting your business, we can either upgrade it or rebuild it with a cleaner architecture.",
   },
   {
-    q: "Do you work with businesses outside Madhya Pradesh?",
-    a: "Yes. While we have a strong local presence in cities like Ratlam, Mandsaur, Neemuch, and Pratapgarh, we work with clients across India and globally. All our communication and delivery happens seamlessly online.",
+    q: "What happens after the solution is launched?",
+    a: "We provide ongoing support for maintenance, updates, bug fixes, performance checks, backups, analytics, feature improvements, and scaling. Our aim is to keep your solution reliable and useful as your business grows.",
+  },
+  {
+    q: "Do you work only with Indore-based businesses?",
+    a: "No. Arthzone is rooted in Indore, but we work with businesses across India and international markets. Discovery, planning, reviews, delivery, and support can all be handled smoothly online.",
   },
 ];
 
@@ -38,7 +42,7 @@ export default function FAQSection() {
   const toggle = (i: number) => setOpen(open === i ? null : i);
 
   return (
-    <section className="bg-[#101010] text-white py-24 px-4">
+    <section id="faq" className="bg-[#101010] text-white py-24 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">

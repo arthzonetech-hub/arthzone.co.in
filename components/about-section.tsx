@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const checkIcon = (
   <svg
     width="34"
@@ -73,19 +75,19 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 items-center gap-10 lg:gap-0">
           <div className="lg:col-span-2 lg:pr-24">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight capitalize mb-4">
-              The Arthzone Techonlogies Difference
+              The Arthzone Technologies Difference
             </h2>
             <p className="text-base md:text-xl font-normal leading-relaxed">
               We are a passionate, driven team of digital experts committed to
               delivering creative and impactful solutions that guarantee your
-              brand's success.
+              brand&apos;s success.
             </p>
-            <a
-              href="#"
+            <Link
+              href="/company/about-us"
               className="mt-6 inline-flex items-center gap-2.5 px-6 h-[52px] md:h-[60px] bg-[#7614EF] border-2 border-[#7614EF] text-white rounded-xl text-base md:text-xl font-semibold transition-all duration-300 hover:bg-white hover:text-[#7614EF]"
             >
               Read More
-            </a>
+            </Link>
           </div>
 
           <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">

@@ -372,7 +372,7 @@ export default function WaServicePageClient({
         </div>
       </section>
 
-      <WaStickyFaq faqs={content.faqs} badge="FAQ's" />
+      <WaStickyFaq faqs={content.faqs} badge="FAQs" />
     </div>
   );
 }
