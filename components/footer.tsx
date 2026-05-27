@@ -193,7 +193,7 @@ export default function Footer() {
                       },
                       {
                         label: "Business Websites",
-                        href: "/website-development-indore",
+                        href: "/services/business-websites",
                       },
                     ].map((item) => (
                       <li key={item.label}>

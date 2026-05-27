@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
+import { Suspense } from "react";
+import ScrollToTop from "@/components/scroll-to-top";
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import "./globals.css";
 
@@ -89,7 +91,12 @@ export default function RootLayout({
         className={`${dmSans.variable} antialiased min-w-0 overflow-x-clip`}
         suppressHydrationWarning
       >
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <Suspense fallback={null}>
+            <ScrollToTop />
+          </Suspense>
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );
